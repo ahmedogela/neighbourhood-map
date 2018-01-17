@@ -1,0 +1,28 @@
+* {
+    -webkit-border-radius: 0 !important;
+       -moz-border-radius: 0 !important;
+            border-radius: 0 !important;
+}
+
+body{
+    height: 100vh;
+    background-color: aliceblue;
+}
+
+#sidebar {
+    height: 100vh;
+    background-color: #fff;
+    overflow-y: scroll;
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    min-height: 40vh;
+}
+
+@media (max-width: 575px) {
+    #sidebar {
+        max-height: 40vh;
+    }
+}

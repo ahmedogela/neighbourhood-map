@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restaurants In Egypt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="sidebar" class="list-group col-md-3 col-sm-5 col-xs-12 px-0" data-bind="foreach: filterRestaurants">
+        <a href="#" class="list-group-item list-group-item-action" data-bind="text: name, click: $parent.setRestaurant"></a>
+      </div>
+
+      <div class="col-md-9 col-sm-7 col-xs-12 px-0">
+        <nav id="nav-bar" class="navbar navbar-dark bg-dark mx-0 row">
+          <a class="navbar-brand col-md-4 pl-0" href="#">Restaurants In Egypt</a>
+          <input class="form-control col-md-7" id="searchBar" type="text" placeholder="Search ..." data-bind="value: searchValue, valueUpdate:'afterkeydown'">
+        </nav>
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="./js/error.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" onerror="errorMessage('jQuery')"></script>
+  <script src="./js/knockout-3.4.2.js" onerror="errorMessage('Knockout')"></script>
+  <script src="./js/app.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAC4zZ2PyhJiV77585ZJ_arqQhkOnc40Y&callback=initMap" onerror="errorMessage('Google Map API ')" async defer></script>
+</body>
+</html>
