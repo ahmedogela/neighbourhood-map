@@ -6,10 +6,10 @@ A list of restaurants location in Cairo, Egypt, that you can filter and get some
 ## Table of content
 ---
 
-* [What will I Learn?](#What_will_I_Learn?)
-* [Libraries, frameworks and APIs used](#Libraries,_frameworks_and_APIs_used)
-* [How to run it](#How_to_run_it)
-* [Resources](#Resources)
+* [What will I Learn?](#what-will-i-learn)
+* [Libraries, frameworks and APIs used](#libraries-frameworks-and-apis-used)
+* [How to run it](#how-to-run-it)
+* [Resources](#resources)
 
 
 ## What will I Learn?
