@@ -49,19 +49,22 @@ function RestaurantsViewModel() {
   map.addListener("click", function(){
       infowindow.close();
   });
+  
   // FILTERED LIST OBSERVABLE
-  self.filterRestaurants = ko.dependentObservable(function() {
+  self.filterRestaurants = ko.computed(function() {
     var self = this;
     if (!self.searchValue()) {
-      return ko.utils.arrayFilter(self.restaurants(), function(data) {
-        // SHOW THE LOCATION MARKER IF IT EXISTS IN THE SEARCH
-        data.marker.setVisible(true);
-        timedAnimation(data, google.maps.Animation.DROP);
-        return true;
-      });
+        self.restaurants().forEach(function(data) {
+            // SHOW THE LOCATION MARKER IF IT EXISTS IN THE SEARCH
+          data.marker.setVisible(true);
+          timedAnimation(data, google.maps.Animation.DROP);
+        });
+        return self.restaurants();
     } else {
-      return ko.utils.arrayFilter(self.restaurants(), function(data) {
-        if (data.name.toLowerCase().indexOf(self.searchValue().toLowerCase()) >= 0) {
+      return self.restaurants().filter(function(data) {
+        var search = self.searchValue().toLowerCase()
+        var isSearchFound = data.name.toLowerCase().indexOf(search);
+        if(isSearchFound != -1) {
           // SHOW THE LOCATION MARKER IF IT EXISTS IN THE SEARCH
           data.marker.setVisible(true);
           timedAnimation(data, google.maps.Animation.DROP)
